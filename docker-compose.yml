@@ -3,6 +3,7 @@ version: '3.2'
 services:
 
   frontend:
+    container_name: rebb_front
     build: frontend
     ports:
       - 20080:80
@@ -13,6 +14,7 @@ services:
       - ./:/app
 
   backend:
+    container_name: rebb_back
     build: backend
     ports:
       - 21080:80
@@ -22,14 +24,20 @@ services:
       # Mount source-code for development
       - ./:/app
 
-  mysql:
-    image: mysql:5.7
+  db:
+    image: mysql:8
+    container_name: rebb_db
     environment:
-      - MYSQL_ROOT_PASSWORD=verysecret
-      - MYSQL_DATABASE=yii2advanced
-      - MYSQL_USER=yii2advanced
-      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=rebbrules
+      - MYSQL_DATABASE=rebb
+      - MYSQL_USER=rebb
+      - MYSQL_PASSWORD=rebbuser
 
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: rebb_myadminp
+    ports:
+      - 8000:80
   #pgsql:
   #  image: postgres:9.5
   #  environment:
