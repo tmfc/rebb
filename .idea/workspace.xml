@@ -19,8 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add DEVELOP.md file">
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add database config section to DEVELOP.md">
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201214_081545_create_scene_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +42,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9005" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="b4ff9a4d-bd60-4133-b164-71475bf70743" name="docker" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
+        </path_mappings>
+      </server>
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -130,18 +149,29 @@
     </include_path>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/web/images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/views" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Remote Debug.Unnamed">
     <configuration name="codeception.yml" type="CodeceptionConfigurationType" factoryName="Codeception">
       <PhpTestRunnerSettings scope="ConfigurationFile" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" nameIsGenerated="true" filter_connections="FILTER" server_name="docker" session_id="PHPStorm">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Codeception.codeception.yml" />
+      <item itemvalue="PHP Remote Debug.Unnamed" />
+    </list>
   </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="update gitignore">
@@ -165,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607864056426</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add database config section to DEVELOP.md">
+      <created>1607912026825</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607912026825</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,28 +221,47 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="add yii-admin for rbac manage&#10;add adminlte as view template" />
     <MESSAGE value="add DEVELOP.md file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add DEVELOP.md file" />
+    <MESSAGE value="add database config section to DEVELOP.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="add database config section to DEVELOP.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="474" y="304" key="#Composer/0.23.1440.794@0.23.1440.794" timestamp="1607861207630" />
+    <state x="307" y="94" key="#Servers" timestamp="1607931449607">
+      <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="307" y="94" key="#Servers/0.23.1440.794@0.23.1440.794" timestamp="1607931449607" />
+    <state x="184" y="82" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607931451333">
+      <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="184" y="82" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.794@0.23.1440.794" timestamp="1607931451333" />
     <state x="100" y="123" width="1240" height="594" key="DiffContextDialog" timestamp="1607862518372">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="100" y="123" width="1240" height="594" key="DiffContextDialog/0.23.1440.794@0.23.1440.794" timestamp="1607862518372" />
+    <state x="508" y="182" key="FileChooserDialogImpl" timestamp="1607917398008">
+      <screen x="0" y="23" width="1440" height="795" />
+    </state>
+    <state x="508" y="182" key="FileChooserDialogImpl/0.23.1440.795@0.23.1440.795" timestamp="1607917398008" />
     <state x="556" y="129" key="RollbackChangesDialog" timestamp="1607862458853">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="556" y="129" key="RollbackChangesDialog/0.23.1440.794@0.23.1440.794" timestamp="1607862458853" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607864057533">
+    <state x="221" y="59" key="SettingsEditor" timestamp="1607931369521">
       <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="221" y="59" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1607931369520" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607912030714">
+      <screen x="0" y="23" width="1440" height="795" />
     </state>
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1607864057533" />
-    <state x="418" y="175" width="604" height="490" key="find.popup" timestamp="1607862488821">
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.795@0.23.1440.795" timestamp="1607912030714" />
+    <state x="418" y="175" width="604" height="490" key="find.popup" timestamp="1607946032882">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="418" y="175" width="604" height="490" key="find.popup/0.23.1440.794@0.23.1440.794" timestamp="1607862488821" />
+    <state x="418" y="175" width="604" height="490" key="find.popup/0.23.1440.794@0.23.1440.794" timestamp="1607946032882" />
+    <state x="418" y="175" width="604" height="491" key="find.popup/0.23.1440.795@0.23.1440.795" timestamp="1607934701573" />
   </component>
 </project>

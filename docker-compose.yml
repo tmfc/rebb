@@ -15,6 +15,8 @@ services:
 
   backend:
     container_name: rebb_back
+    environment:
+      - PHP_ENABLE_XDEBUG=1
     build: backend
     ports:
       - 21080:80
@@ -35,7 +37,7 @@ services:
 
   myadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: rebb_myadminp
+    container_name: rebb_myadmin
     ports:
       - 8000:80
   #pgsql:
