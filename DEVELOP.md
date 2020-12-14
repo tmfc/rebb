@@ -29,6 +29,19 @@ $ composer install
 # then follow the instruction to init
 ```
 
+### Config database connection string
+
+Open ./Common/config/main-local.php
+modify components db as follow 
+```php
+    'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=rebb_db;dbname=rebb',
+            'username' => 'rebb',
+            'password' => 'rebbuser',
+            'charset' => 'utf8',
+        ]
+```
 ### Init database
 ```shell script
 $ yii migrate

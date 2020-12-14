@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add yii-admin for rbac manage&#10;add adminlte as view template">
-      <change afterPath="$PROJECT_DIR$/DEVELOP.md" afterDir="false" />
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add DEVELOP.md file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607863381824</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add DEVELOP.md file">
+      <created>1607864056426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607864056426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,7 +183,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update gitignore" />
     <MESSAGE value="add yii-admin for rbac manage&#10;add adminlte as view template" />
-    <option name="LAST_COMMIT_MESSAGE" value="add yii-admin for rbac manage&#10;add adminlte as view template" />
+    <MESSAGE value="add DEVELOP.md file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add DEVELOP.md file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -192,10 +199,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="556" y="129" key="RollbackChangesDialog/0.23.1440.794@0.23.1440.794" timestamp="1607862458853" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607863387409">
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607864057533">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1607863387409" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1607864057533" />
     <state x="418" y="175" width="604" height="490" key="find.popup" timestamp="1607862488821">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
