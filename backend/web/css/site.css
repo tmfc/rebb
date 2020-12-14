@@ -137,3 +137,34 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.ui-autocomplete {
+    top:85px !important;
+    left:240px !important;
+}
+
+
+.skin-blue .main-header .navbar {
+    background-color: #3665a0 !important;
+}
+.skin-blue .main-header .logo {
+    background-color: #245BA3 !important;
+}
+.logo-lg {
+    background: url(/images/rebb-icon.png) no-repeat;
+    background-size: 50px;
+    background-color: #245BA3;
+}
+.content-header>.breadcrumb {
+    position: relative !important;
+    margin-top: 5px !important;
+    top: 0 !important;
+    right: 0 !important;
+    float: none !important;
+    background: #d2d6de !important;
+    padding-left: 10px !important;
+}
+
+.content-header>.breadcrumb li:before {
+    color: #97a0b3 !important;
+}
