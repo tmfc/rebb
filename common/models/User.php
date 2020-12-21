@@ -209,4 +209,11 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function getAvatar()
+    {
+        $identicon = new \Identicon\Identicon();
+        $avatarImageUri = $identicon->getImageDataUri($this->username . Yii::$app->name, 45);
+        return $avatarImageUri;
+    }
 }

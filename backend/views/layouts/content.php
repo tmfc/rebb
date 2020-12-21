@@ -1,7 +1,9 @@
 <?php
 use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
-
+/* @var $content string */
+/* @var $directoryAsset string */
+/* @var $current_user \common\models\User */
 ?>
 <div class="content-wrapper">
     <section class="content-header">

@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "scene".
@@ -23,6 +25,30 @@ class Scene extends \yii\db\ActiveRecord
         return 'scene';
     }
 
+
+    /**
+     * Use [[yii\behaviors\TimestampBehavior]] to handle created_at and updated_at
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TimestampBehavior::class,
+                'value' => new Expression('NOW()'),
+            ]
+        ];
+    }
+
+
+    /**
+     * delete created_at and updated_at for crud generator
+     */
+    public function safeAttributes()
+    {
+        $safeAttributes = parent::safeAttributes();
+        return array_diff($safeAttributes,['created_at', 'updated_at']);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -41,11 +67,17 @@ class Scene extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'id' => Yii::t('app', 'ID'),
+            'name' => Yii::t('app', 'Name'),
+            'description' => Yii::t('app', 'Description'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
         ];
+    }
+
+
+    public function getBizObjects()
+    {
+        return $this->hasMany(BizObject::class, ['scene_id' => 'id']);
     }
 }

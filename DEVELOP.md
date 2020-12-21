@@ -53,3 +53,32 @@ $ yii migrate --migrationPath=@yii/rbac/migrations
 # Create admin user
 
 Open http://localhost:21080/index.php?admin/user/signup, create user, login and ENJOY
+
+# Use Rebb Gii generator and template
+
+open app/backend/config/mai-local.php, add
+
+```php
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*'],
+        'generators' => [
+            'crud' => [
+                'class' => 'app\template\crud\Generator',
+                'templates' => [
+                    'rebbCrud' => '@backend/template/crud/default',
+                ]
+            ],
+            'model' => [
+                'class' => 'app\template\model\Generator',
+                'templates' => [
+                    'rebbModel' => '@backend/template/model/default',
+                ]
+            ],
+        ],
+    ];
+```
+
+the model generator will add Timestamp behavior to handle created_at and updated_at column
+
+the crud generator will use kartik-v widgets to show index/view/_form page

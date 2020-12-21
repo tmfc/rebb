@@ -19,24 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add database config section to DEVELOP.md">
-      <change afterPath="$PROJECT_DIR$/console/migrations/m201214_081545_create_scene_table.php" afterDir="false" />
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="use rebb crud generator for gii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEVELOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEVELOP.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="DONT_SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -146,18 +138,41 @@
       <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
       <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
       <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <path value="$PROJECT_DIR$/vendor/yzalis/identicon" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-bootstrap4-dropdown" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/components/flag-icon-css" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-icons" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-detail-view" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
     </include_path>
   </component>
+  <component name="ProjectId" id="1luWgFORYMI9rzYAtqFW56JlEeF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/template" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/template" />
+      <recent name="$PROJECT_DIR$/backend/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/web/images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/views" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Remote Debug.Unnamed">
@@ -173,6 +188,7 @@
       <item itemvalue="PHP Remote Debug.Unnamed" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="update gitignore">
       <created>1607848317922</created>
@@ -202,8 +218,49 @@
       <option name="project" value="LOCAL" />
       <updated>1607912026825</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add scene table&#10;add scene crud operation&#10;modify backend layout and main page">
+      <created>1607954410835</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607954410835</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add scene model and administration page">
+      <created>1607954558045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607954558045</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add scene model and administration page" />
+      <created>1608447565549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608447565549</updated>
+      <workItem from="1608447566998" duration="53000" />
+      <workItem from="1608447627062" duration="81000" />
+      <workItem from="1608447711196" duration="11220000" />
+    </task>
+    <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
+      <created>1608528588632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608528588632</updated>
+    </task>
+    <task id="LOCAL-00008" summary="use rebb crud generator for gii">
+      <created>1608529289290</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608529289290</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -222,7 +279,11 @@
     <MESSAGE value="add yii-admin for rbac manage&#10;add adminlte as view template" />
     <MESSAGE value="add DEVELOP.md file" />
     <MESSAGE value="add database config section to DEVELOP.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="add database config section to DEVELOP.md" />
+    <MESSAGE value="add scene table&#10;add scene crud operation&#10;modify backend layout and main page" />
+    <MESSAGE value="add scene model and administration page" />
+    <MESSAGE value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
+    <MESSAGE value="use rebb crud generator for gii" />
+    <option name="LAST_COMMIT_MESSAGE" value="use rebb crud generator for gii" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -237,6 +298,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="184" y="82" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.794@0.23.1440.794" timestamp="1607931451333" />
+    <state x="458" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608010948412">
+      <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="458" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.794@0.23.1440.794" timestamp="1608010948412" />
     <state x="100" y="123" width="1240" height="594" key="DiffContextDialog" timestamp="1607862518372">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
@@ -245,23 +310,31 @@
       <screen x="0" y="23" width="1440" height="795" />
     </state>
     <state x="508" y="182" key="FileChooserDialogImpl/0.23.1440.795@0.23.1440.795" timestamp="1607917398008" />
-    <state x="556" y="129" key="RollbackChangesDialog" timestamp="1607862458853">
+    <state x="556" y="129" key="RollbackChangesDialog" timestamp="1608013570127">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="556" y="129" key="RollbackChangesDialog/0.23.1440.794@0.23.1440.794" timestamp="1607862458853" />
+    <state x="556" y="129" key="RollbackChangesDialog/0.23.1440.794@0.23.1440.794" timestamp="1608013570127" />
     <state x="221" y="59" key="SettingsEditor" timestamp="1607931369521">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="221" y="59" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1607931369520" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607912030714">
-      <screen x="0" y="23" width="1440" height="795" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1608529298572">
+      <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1607864057533" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1608529298572" />
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.795@0.23.1440.795" timestamp="1607912030714" />
+    <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608447715313">
+      <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.794@0.23.1440.794" timestamp="1608447715313" />
     <state x="418" y="175" width="604" height="490" key="find.popup" timestamp="1607946032882">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="418" y="175" width="604" height="490" key="find.popup/0.23.1440.794@0.23.1440.794" timestamp="1607946032882" />
     <state x="418" y="175" width="604" height="491" key="find.popup/0.23.1440.795@0.23.1440.795" timestamp="1607934701573" />
+    <state x="385" y="141" width="670" height="676" key="search.everywhere.popup" timestamp="1608008701333">
+      <screen x="0" y="23" width="1440" height="794" />
+    </state>
+    <state x="385" y="141" width="670" height="676" key="search.everywhere.popup/0.23.1440.794@0.23.1440.794" timestamp="1608008701333" />
   </component>
 </project>
