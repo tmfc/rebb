@@ -21,7 +21,7 @@ class SceneController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -42,7 +42,10 @@ class SceneController extends Controller
         return $this->render('index', [
             'dataProvider' => $dataProvider,
         ]);
+
     }
+
+
 
     /**
      * Displays a single Scene model.

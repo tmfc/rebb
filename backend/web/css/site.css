@@ -168,3 +168,7 @@ a.desc:after {
 .content-header>.breadcrumb li:before {
     color: #97a0b3 !important;
 }
+
+.btn-outline-secondary {
+    border-color:#6c757d !important;
+}
