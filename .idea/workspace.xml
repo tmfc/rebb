@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="use rebb crud generator for gii">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/template/crud/Generator.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/template/crud/Generator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEVELOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEVELOP.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +240,7 @@
       <updated>1608447565549</updated>
       <workItem from="1608447566998" duration="53000" />
       <workItem from="1608447627062" duration="81000" />
-      <workItem from="1608447711196" duration="9740000" />
+      <workItem from="1608447711196" duration="11220000" />
     </task>
     <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
       <created>1608528588632</created>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608528588632</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="use rebb crud generator for gii">
+      <created>1608529289290</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608529289290</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +282,8 @@
     <MESSAGE value="add scene table&#10;add scene crud operation&#10;modify backend layout and main page" />
     <MESSAGE value="add scene model and administration page" />
     <MESSAGE value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
+    <MESSAGE value="use rebb crud generator for gii" />
+    <option name="LAST_COMMIT_MESSAGE" value="use rebb crud generator for gii" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -310,10 +318,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="221" y="59" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1607931369520" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1607954560009">
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1608529298572">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1607954560009" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1608529298572" />
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.795@0.23.1440.795" timestamp="1607912030714" />
     <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608447715313">
       <screen x="0" y="23" width="1440" height="794" />
