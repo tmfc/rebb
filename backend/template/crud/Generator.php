@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\gii\generators\crud;
+namespace app\template\crud;
 
 use Yii;
 use yii\db\ActiveRecord;
@@ -252,7 +252,7 @@ class Generator extends \yii\gii\Generator
             return "\$form->field(\$model, '$attribute')->checkbox()";
         }
 
-        if ($column->type === 'text') {
+        if ($column->type === 'text' || preg_match('/^(desc|description)$/i', $attribute)) {
             return "\$form->field(\$model, '$attribute')->textarea(['rows' => 6])";
         }
 

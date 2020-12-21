@@ -19,38 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add scene model and administration page">
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/Generator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/search.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/_search.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/update.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/default/views/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/crud/form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/model/Generator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/model/default/model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/model/default/query.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/template/model/form.php" afterDir="false" />
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/params.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/params.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/SceneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/SceneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Scene.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Scene.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/scene/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/scene/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/scene/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/scene/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/scene/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/scene/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/scene/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/scene/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/template/crud/Generator.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/template/crud/Generator.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,9 +240,16 @@
       <updated>1608447565549</updated>
       <workItem from="1608447566998" duration="53000" />
       <workItem from="1608447627062" duration="81000" />
-      <workItem from="1608447711196" duration="9054000" />
+      <workItem from="1608447711196" duration="9740000" />
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
+      <created>1608528588632</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608528588632</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +274,8 @@
     <MESSAGE value="add database config section to DEVELOP.md" />
     <MESSAGE value="add scene table&#10;add scene crud operation&#10;modify backend layout and main page" />
     <MESSAGE value="add scene model and administration page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add scene model and administration page" />
+    <MESSAGE value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
