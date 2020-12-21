@@ -27,7 +27,7 @@ if (Yii::$app->controller->action->id === 'login') {
     dmstr\web\AdminLteAsset::register($this);
 
     $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
-    FontAwesomeAsset::register($this);
+//    FontAwesomeAsset::register($this);
     $current_user = \common\models\User::findOne(Yii::$app->user->id);
     ?>
     <?php $this->beginPage() ?>

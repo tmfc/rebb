@@ -19,9 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="use rebb crud generator for gii">
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="update DEVELOP.md">
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201215_045533_create_biz_object_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DEVELOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/DEVELOP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/template/crud/default/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/template/crud/default/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/scene/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/scene/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/m201214_081545_create_scene_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/migrations/m201214_081545_create_scene_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +245,7 @@
       <updated>1608447565549</updated>
       <workItem from="1608447566998" duration="53000" />
       <workItem from="1608447627062" duration="81000" />
-      <workItem from="1608447711196" duration="11220000" />
+      <workItem from="1608447711196" duration="13232000" />
     </task>
     <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
       <created>1608528588632</created>
@@ -256,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608529289290</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update DEVELOP.md">
+      <created>1608533756031</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608533756031</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +295,8 @@
     <MESSAGE value="add scene model and administration page" />
     <MESSAGE value="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets" />
     <MESSAGE value="use rebb crud generator for gii" />
-    <option name="LAST_COMMIT_MESSAGE" value="use rebb crud generator for gii" />
+    <MESSAGE value="update DEVELOP.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update DEVELOP.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -318,19 +331,19 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="221" y="59" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1607931369520" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1608529298572">
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1608533757981">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1608529298572" />
+    <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1608533757981" />
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.795@0.23.1440.795" timestamp="1607912030714" />
     <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608447715313">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.794@0.23.1440.794" timestamp="1608447715313" />
-    <state x="418" y="175" width="604" height="490" key="find.popup" timestamp="1607946032882">
+    <state x="418" y="175" width="614" height="490" key="find.popup" timestamp="1608536619780">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
-    <state x="418" y="175" width="604" height="490" key="find.popup/0.23.1440.794@0.23.1440.794" timestamp="1607946032882" />
+    <state x="418" y="175" width="614" height="490" key="find.popup/0.23.1440.794@0.23.1440.794" timestamp="1608536619780" />
     <state x="418" y="175" width="604" height="491" key="find.popup/0.23.1440.795@0.23.1440.795" timestamp="1607934701573" />
     <state x="385" y="141" width="670" height="676" key="search.everywhere.popup" timestamp="1608008701333">
       <screen x="0" y="23" width="1440" height="794" />

@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'toolbar' =>  [
             [
                 'content' =>
-                    Html::a('<i class="fas fa-plus"></i>',['create'], [
+                    Html::a('<i class="fa fa-plus"></i>',['create'], [
                         'class' => 'btn btn-success',
                         'title' => Yii::t('app', 'Create Scene'),
                     ]) . ' '.
-                    Html::a('<i class="fas fa-redo"></i>', ['index'], [
+                    Html::a('<i class="fa fa-repeat"></i>', ['index'], [
                         'class' => 'btn btn-outline-secondary',
                         'title'=>'Reset Grid',
                         'data-pjax' => 0,

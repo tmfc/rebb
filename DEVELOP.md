@@ -82,3 +82,4 @@ open app/backend/config/mai-local.php, add
 the model generator will add Timestamp behavior to handle created_at and updated_at column
 
 the crud generator will use kartik-v widgets to show index/view/_form page
+
