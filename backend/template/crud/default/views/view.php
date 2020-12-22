@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'hover'=>true,
             'mode'=>DetailView::MODE_VIEW,
             'panel'=>[
-                'heading'=><?= StringHelper::basename($generator->modelClass) ?> . ' # ' . $model->id,
+                'heading'=>'<?= StringHelper::basename($generator->modelClass) ?> # ' . $model->id,
                 'type'=>DetailView::TYPE_INFO,
             ],
             'attributes' => [

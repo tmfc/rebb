@@ -48,7 +48,7 @@ class m201215_045533_create_biz_object_table extends Migration
         $this->addForeignKey(
             'fk-biz_object-scene_id',
             '{{%biz_object}}',
-            'author_id',
+            'scene_id',
             'scene',
             'id',
             'CASCADE'
