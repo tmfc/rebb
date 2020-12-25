@@ -2,8 +2,10 @@
 
 namespace app\models;
 
+use app\models\enums\EnableStatus;
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 use yii\db\Expression;
 
 /**
@@ -12,10 +14,11 @@ use yii\db\Expression;
  * @property int $id
  * @property string|null $name
  * @property string|null $description
+ * @property string|null $status
  * @property string|null $created_at
  * @property string|null $updated_at
  */
-class Scene extends \yii\db\ActiveRecord
+class Scene extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -55,9 +58,13 @@ class Scene extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['name', 'status'], 'required'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
+            [['status'], 'integer'],
+            ['status', 'default', 'value' => EnableStatus::ENABLED],
+            ['status', 'in', 'range' => EnableStatus::getConstantsByName()],
         ];
     }
 
@@ -70,14 +77,29 @@ class Scene extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
 
-
     public function getBizObjects()
     {
         return $this->hasMany(BizObject::class, ['scene_id' => 'id']);
+    }
+
+    public function setStatus(EnableStatus $status)
+    {
+        $this->status = $status->getValue();
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    static public function getEnabledSceneList()
+    {
+        return Scene::find()->where(['status' => EnableStatus::ENABLED])->orderBy('name')->asArray()->all();
     }
 }

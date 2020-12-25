@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use kartik\detail\DetailView;
+use yii\web\YiiAsset;
+use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\BizObject */
@@ -9,7 +10,7 @@ use kartik\detail\DetailView;
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Biz Objects'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
+YiiAsset::register($this);
 ?>
 <div class="row biz-object-view">
 
@@ -28,20 +29,27 @@ $this->params['breadcrumbs'][] = $this->title;
         </p>
         <?= DetailView::widget([
             'model' => $model,
-            'condensed'=>true,
-            'hover'=>true,
-            'mode'=>DetailView::MODE_VIEW,
-            'panel'=>[
-                'heading'=>'BizObject # ' . $model->id,
-                'type'=>DetailView::TYPE_INFO,
-            ],
-            'buttons1' => '',
+
             'attributes' => [
                 'id',
                 'name',
                 'description',
                 'scene_id',
                 'definition:ntext',
+                [
+                    'attribute'=>'definition',
+                    'format'=>'raw',
+                    'value'=>trntv\aceeditor\AceEditor::widget([
+                        // You can either use it for model attribute
+                        'model' => $model,
+                        'attribute' => 'definition',
+
+                        'mode'=>'html', // programing language mode. Default "html"
+                        'theme'=>'github', // editor theme. Default "github"
+                        'readOnly'=>'true' // Read-only mode on/off = true/false. Default "false"
+                    ]),
+
+                ],
                 'author_id',
                 'created_at',
                 'updated_at',

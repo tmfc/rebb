@@ -172,3 +172,11 @@ a.desc:after {
 .btn-outline-secondary {
     border-color:#6c757d !important;
 }
+
+table.detail-view th {
+    width: 25%;
+}
+
+table.detail-view td {
+    width: 75%;
+}

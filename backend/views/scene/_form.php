@@ -1,5 +1,7 @@
 <?php
 
+use app\models\enums\EnableStatus;
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use kartik\form\ActiveForm;
 
@@ -20,6 +22,14 @@ use kartik\form\ActiveForm;
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'status')->widget(Select2::class, [
+        'data' => EnableStatus::listData(),
+        'options' => ['placeholder' => 'Select a scene ...'],
+        'pluginOptions' => [
+            'allowClear' => false
+        ],
+    ]) ?>
 
     <div class="form-group row">
         <div class="col-md-3"></div>

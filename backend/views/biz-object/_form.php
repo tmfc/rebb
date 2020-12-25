@@ -1,5 +1,8 @@
 <?php
 
+use app\models\Scene;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\form\ActiveForm;
 
@@ -21,7 +24,13 @@ use kartik\form\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'scene_id')->textInput() ?>
+    <?= $form->field($model, 'scene_id')->widget(Select2::class, [
+        'data' => ArrayHelper::map(Scene::getEnabledSceneList(), 'id', 'name'),
+        'options' => ['placeholder' => 'Select a scene ...'],
+        'pluginOptions' => [
+            'allowClear' => false
+        ],
+    ]); ?>
 
     <?= $form->field($model, 'definition')->widget(
         'trntv\aceeditor\AceEditor',
@@ -30,8 +39,8 @@ use kartik\form\ActiveForm;
             'theme'=>'clouds', // editor theme. Default "github"
         ]) ?>
     <div class="form-group row">
-        <div class="col-3"></div>
-        <div class="col-9">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
             <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
         </div>
     </div>

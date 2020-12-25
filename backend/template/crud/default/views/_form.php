@@ -39,8 +39,8 @@ use kartik\form\ActiveForm;
     }
 } ?>
     <div class="form-group row">
-        <div class="col-3"></div>
-        <div class="col-9">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
             <?= "<?= " ?>Html::submitButton(<?= $generator->generateString('Save') ?>, ['class' => 'btn btn-success']) ?>
         </div>
     </div>

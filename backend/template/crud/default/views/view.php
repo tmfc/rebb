@@ -12,7 +12,7 @@ echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
-use kartik\detail\DetailView;
+use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
@@ -30,13 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= "<?= " ?>DetailView::widget([
             'model' => $model,
-            'condensed'=>true,
-            'hover'=>true,
-            'mode'=>DetailView::MODE_VIEW,
-            'panel'=>[
-                'heading'=>'<?= StringHelper::basename($generator->modelClass) ?> # ' . $model->id,
-                'type'=>DetailView::TYPE_INFO,
-            ],
             'attributes' => [
     <?php
     if (($tableSchema = $generator->getTableSchema()) === false) {

@@ -13,14 +13,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-
-            'id',
             'name',
             'description',
+            [
+                'class' => 'kartik\grid\BooleanColumn',
+                'attribute' => 'status',
+                'vAlign' => 'middle'
+            ],
             'created_at',
             'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
         ],
         'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
         'headerRowOptions' => ['class' => 'kartik-sheet-style'],
