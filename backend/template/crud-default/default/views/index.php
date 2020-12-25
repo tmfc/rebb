@@ -13,7 +13,7 @@ echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
-use <?= $generator->indexWidgetType === 'grid' ? "kartik\grid\GridView;" : "yii\\widgets\\ListView" ?>;
+use <?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
 <?= $generator->enablePjax ? 'use yii\widgets\Pjax;' : '' ?>
 
 /* @var $this yii\web\View */
@@ -23,7 +23,13 @@ use <?= $generator->indexWidgetType === 'grid' ? "kartik\grid\GridView;" : "yii\
 $this->title = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="admin_index <?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index">
+<div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-index">
+
+    <h1><?= "<?= " ?>Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= "<?= " ?>Html::a(<?= $generator->generateString('Create ' . Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
 <?= $generator->enablePjax ? "    <?php Pjax::begin(); ?>\n" : '' ?>
 <?php if(!empty($generator->searchModelClass)): ?>
@@ -58,30 +64,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 }
 ?>
 
-            ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
-        ],
-        'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
-        'headerRowOptions' => ['class' => 'kartik-sheet-style'],
-        'filterRowOptions' => ['class' => 'kartik-sheet-style'],
-        // set your toolbar
-        'toolbar' =>  [
-            [
-                'content' =>
-                    Html::a('<i class="fa fa-plus"></i>',['create'], [
-                            'class' => 'btn btn-success',
-                            'title' => Yii::t('app', 'Create <?= StringHelper::basename($generator->modelClass) ?>'),
-                    ]) . ' '.
-                    Html::a('<i class="fa fa-repeat"></i>', ['index'], [
-                            'class' => 'btn btn-outline-secondary',
-                            'title'=>'Reset Grid',
-                            'data-pjax' => 0,
-                    ]),
-                'options' => ['class' => 'btn-group mr-2']
-            ],
-        ],
-        'panel' => [
-              'type' => GridView::TYPE_DEFAULT,
-              'heading' => '<i class="fas fa-cubes"></i>  <?= StringHelper::basename($generator->modelClass) ?>',
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 <?php else: ?>

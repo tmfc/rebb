@@ -13,14 +13,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-
-            'id',
             'name',
             'description',
+            [
+                'class' => 'kartik\grid\BooleanColumn',
+                'attribute' => 'status',
+                'vAlign' => 'middle'
+            ],
             'created_at',
             'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
         ],
         'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
         'headerRowOptions' => ['class' => 'kartik-sheet-style'],
@@ -29,11 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'toolbar' =>  [
             [
                 'content' =>
-                    Html::a('<i class="fas fa-plus"></i>',['create'], [
+                    Html::a('<i class="fa fa-plus"></i>',['create'], [
                         'class' => 'btn btn-success',
                         'title' => Yii::t('app', 'Create Scene'),
                     ]) . ' '.
-                    Html::a('<i class="fas fa-redo"></i>', ['index'], [
+                    Html::a('<i class="fa fa-repeat"></i>', ['index'], [
                         'class' => 'btn btn-outline-secondary',
                         'title'=>'Reset Grid',
                         'data-pjax' => 0,

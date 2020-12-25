@@ -17,7 +17,7 @@ echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
-use kartik\form\ActiveForm;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
@@ -26,24 +26,17 @@ use kartik\form\ActiveForm;
 
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-form">
 
-    <?= "<?php " ?>$form = ActiveForm::begin([
-        'type' => ActiveForm::TYPE_HORIZONTAL,
-        'formConfig' => [
-            'labelSpan' => 3,
-            'deviceSize' => ActiveForm::SIZE_SMALL
-        ]]); ?>
+    <?= "<?php " ?>$form = ActiveForm::begin(); ?>
 
 <?php foreach ($generator->getColumnNames() as $attribute) {
     if (in_array($attribute, $safeAttributes)) {
         echo "    <?= " . $generator->generateActiveField($attribute) . " ?>\n\n";
     }
 } ?>
-    <div class="form-group row">
-        <div class="col-md-3"></div>
-        <div class="col-md-9">
-            <?= "<?= " ?>Html::submitButton(<?= $generator->generateString('Save') ?>, ['class' => 'btn btn-success']) ?>
-        </div>
+    <div class="form-group">
+        <?= "<?= " ?>Html::submitButton(<?= $generator->generateString('Save') ?>, ['class' => 'btn btn-success']) ?>
     </div>
+
     <?= "<?php " ?>ActiveForm::end(); ?>
 
 </div>
