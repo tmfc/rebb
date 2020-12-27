@@ -2,18 +2,18 @@
 
 namespace app\models;
 
+use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
-use common\models\User;
 
 /**
- * This is the model class for table "biz_object".
+ * This is the model class for table "rule".
  *
  * @property int $id
- * @property string $name
- * @property string|null $description
  * @property int $scene_id
+ * @property string $name
+ * @property string $description
  * @property string $definition
  * @property int $author_id
  * @property string|null $created_at
@@ -22,14 +22,14 @@ use common\models\User;
  * @property User $author
  * @property Scene $scene
  */
-class BizObject extends \yii\db\ActiveRecord
+class Rule extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'biz_object';
+        return 'rule';
     }
 
     /**
@@ -60,14 +60,12 @@ class BizObject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'scene_id', 'definition', 'author_id'], 'required'],
+            [['scene_id', 'name', 'description', 'definition', 'author_id'], 'required'],
             [['scene_id', 'author_id'], 'integer'],
             [['definition'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
-            [['description'], 'string', 'max' => 200],
-            [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author_id' => 'id']],
-            [['scene_id'], 'exist', 'skipOnError' => true, 'targetClass' => Scene::class, 'targetAttribute' => ['scene_id' => 'id']],
+            [['description'], 'string', 'max' => 500],
         ];
     }
 
@@ -78,9 +76,9 @@ class BizObject extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'scene_id' => Yii::t('app', 'Scene ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
-            'scene_id' => Yii::t('app', 'Scene ID'),
             'definition' => Yii::t('app', 'Definition'),
             'author_id' => Yii::t('app', 'Author ID'),
             'created_at' => Yii::t('app', 'Created At'),
