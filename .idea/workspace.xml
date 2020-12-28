@@ -19,21 +19,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="finish BizObject CRUD function&#10;add status to Scene model&#10;finish Scene CRUD function">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/RuleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/Rule.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/RuleSearch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/_form.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/_search.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/update.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/views/rule/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/console/migrations/m201225_065918_add_status_to_scene.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/console/migrations/m201226_025519_create_rule_table.php" afterDir="false" />
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add status to scene model&#10;add rule model&#10;add rule CURD">
+      <change afterPath="$PROJECT_DIR$/backend/controllers/RulePairController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/RulePair.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/RulePairSearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/_form.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/_search.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/update.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/rule-pair/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201227_111034_create_rule_pair_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/BizObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/BizObject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/biz-object/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/biz-object/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/BizObjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/BizObjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/RuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/RuleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/template/crud/default/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/template/crud/default/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/template/model/Generator.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/template/model/Generator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/m201226_025519_create_rule_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/migrations/m201226_025519_create_rule_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +264,7 @@
       <workItem from="1608447711196" duration="19972000" />
       <workItem from="1608602418546" duration="9910000" />
       <workItem from="1608982007152" duration="164000" />
-      <workItem from="1608984040554" duration="4430000" />
+      <workItem from="1608984040554" duration="8697000" />
     </task>
     <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
       <created>1608528588632</created>
@@ -305,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608883984195</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add status to scene model&#10;add rule model&#10;add rule CURD">
+      <created>1609067281901</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609067281901</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +346,9 @@
     <MESSAGE value="update DEVELOP.md&#10;add migration for table biz_object &#10;change fontawesome to version 4.7" />
     <MESSAGE value="add BizObject CRUD functions&#10;fix biz_object foreign key misspell&#10;use aceeditor for BizObject definition edit" />
     <MESSAGE value="finish BizObject CRUD function&#10;add status to Scene model&#10;finish Scene CRUD function" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish BizObject CRUD function&#10;add status to Scene model&#10;finish Scene CRUD function" />
+    <MESSAGE value="add rule model&#10;add rule CURD" />
+    <MESSAGE value="add status to scene model&#10;add rule model&#10;add rule CURD" />
+    <option name="LAST_COMMIT_MESSAGE" value="add status to scene model&#10;add rule model&#10;add rule CURD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -351,6 +363,10 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="184" y="82" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.794@0.23.1440.794" timestamp="1608551225881" />
+    <state x="401" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609069435154">
+      <screen x="0" y="25" width="1440" height="787" />
+    </state>
+    <state x="401" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1440.787@0.25.1440.787" timestamp="1609069435154" />
     <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609057410718">
       <screen x="0" y="25" width="1440" height="787" />
     </state>
@@ -444,11 +460,12 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="221" y="59" key="SettingsEditor/0.23.1440.794@0.23.1440.794" timestamp="1607931369520" />
-    <state x="320" y="160" key="Vcs.Push.Dialog.v2" timestamp="1608883990613">
-      <screen x="0" y="23" width="1440" height="794" />
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2" timestamp="1609067358464">
+      <screen x="0" y="25" width="1440" height="787" />
     </state>
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.794@0.23.1440.794" timestamp="1608883990613" />
     <state x="320" y="160" key="Vcs.Push.Dialog.v2/0.23.1440.795@0.23.1440.795" timestamp="1607912030714" />
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.25.1440.787@0.25.1440.787" timestamp="1609067358464" />
     <state x="518" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608447715313">
       <screen x="0" y="23" width="1440" height="794" />
     </state>
@@ -462,16 +479,5 @@
       <screen x="0" y="23" width="1440" height="794" />
     </state>
     <state x="385" y="141" width="670" height="676" key="search.everywhere.popup/0.23.1440.794@0.23.1440.794" timestamp="1608878805540" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/backend/controllers/RuleController.php</url>
-          <line>68</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
