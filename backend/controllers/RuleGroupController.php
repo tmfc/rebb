@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\BizObject;
-use app\models\BizObjectSearch;
+use app\models\RuleGroup;
+use app\models\RuleGroupSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BizObjectController implements the CRUD actions for BizObject model.
+ * RuleGroupController implements the CRUD actions for RuleGroup model.
  */
-class BizObjectController extends Controller
+class RuleGroupController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Lists all BizObject models.
+     * Lists all RuleGroup models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new BizObjectSearch();
+        $searchModel = new RuleGroupSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Displays a single BizObject model.
+     * Displays a single RuleGroup model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,19 +58,18 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Creates a new BizObject model.
+     * Creates a new RuleGroup model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new BizObject();
+        $model = new RuleGroup();
+        $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-        else
-            Yii::$app->session->setFlash('error', $model->getErrorSummary(true));
 
         return $this->render('create', [
             'model' => $model,
@@ -78,7 +77,7 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Updates an existing BizObject model.
+     * Updates an existing RuleGroup model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +97,7 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Deletes an existing BizObject model.
+     * Deletes an existing RuleGroup model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -112,15 +111,15 @@ class BizObjectController extends Controller
     }
 
     /**
-     * Finds the BizObject model based on its primary key value.
+     * Finds the RuleGroup model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return BizObject the loaded model
+     * @return RuleGroup the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = BizObject::findOne($id)) !== null) {
+        if (($model = RuleGroup::findOne($id)) !== null) {
             return $model;
         }
 

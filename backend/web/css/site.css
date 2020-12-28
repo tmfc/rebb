@@ -180,3 +180,7 @@ table.detail-view th {
 table.detail-view td {
     width: 75%;
 }
+
+.bootstrap-switch {
+    margin-left:15px;
+}

@@ -68,6 +68,7 @@ class SceneController extends Controller
     public function actionCreate()
     {
         $model = new Scene();
+        $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

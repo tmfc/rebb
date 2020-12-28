@@ -62,6 +62,7 @@ class RulePair extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['author_id','default', 'value' =>Yii::$app->user->id],
             [['name', 'description', 'entrance_code', 'fail_code', 'success_code', 'scene_id', 'author_id'], 'required'],
             [['scene_id', 'author_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
