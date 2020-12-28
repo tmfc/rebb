@@ -30,7 +30,7 @@ use yii\helpers\Html;
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
+                            <img src="<?= $current_user->avatar ?>" class="img-circle"
                                  alt="User Image"/>
 
                             <p>

@@ -65,15 +65,14 @@ class BizObjectController extends Controller
     public function actionCreate()
     {
         $model = new BizObject();
-        $post_data = Yii::$app->request->post();
-        $post_data['BizObject']['author_id'] = Yii::$app->user->id;
+        $model->load(Yii::$app->request->post());
+        $model->author_id =  Yii::$app->user->id;
 
-        if ($model->load($post_data) && $model->save()) {
+        if (Yii::$app->request->isPost && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-        else {
+        else
             Yii::$app->session->setFlash('error', $model->getErrorSummary(true));
-        }
 
         return $this->render('create', [
             'model' => $model,

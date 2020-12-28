@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Rule;
-use app\models\RuleSearch;
+use app\models\RulePair;
+use app\models\RulePairSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RuleController implements the CRUD actions for Rule model.
+ * RulePairController implements the CRUD actions for RulePair model.
  */
-class RuleController extends Controller
+class RulePairController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -21,7 +21,7 @@ class RuleController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
                 ],
@@ -30,12 +30,12 @@ class RuleController extends Controller
     }
 
     /**
-     * Lists all Rule models.
+     * Lists all RulePair models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RuleSearch();
+        $searchModel = new RulePairSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Displays a single Rule model.
+     * Displays a single RulePair model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class RuleController extends Controller
     }
 
     /**
-     * Creates a new Rule model.
+     * Creates a new RulePair model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Rule();
+        $model = new RulePair();
         $model->load(Yii::$app->request->post());
         $model->author_id =  Yii::$app->user->id;
 
@@ -74,13 +74,14 @@ class RuleController extends Controller
         else
             Yii::$app->session->setFlash('error', $model->getErrorSummary(true));
 
+
         return $this->render('create', [
             'model' => $model,
         ]);
     }
 
     /**
-     * Updates an existing Rule model.
+     * Updates an existing RulePair model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -100,29 +101,29 @@ class RuleController extends Controller
     }
 
     /**
-     * Deletes an existing Rule model.
+     * Deletes an existing RulePair model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-//    public function actionDelete($id)
-//    {
-//        $this->findModel($id)->delete();
-//
-//        return $this->redirect(['index']);
-//    }
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
 
     /**
-     * Finds the Rule model based on its primary key value.
+     * Finds the RulePair model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Rule the loaded model
+     * @return RulePair the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Rule::findOne($id)) !== null) {
+        if (($model = RulePair::findOne($id)) !== null) {
             return $model;
         }
 

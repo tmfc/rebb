@@ -3,20 +3,22 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%rule}}`.
+ * Class m201227_111034_create_rule_pair_table
  */
-class m201226_025519_create_rule_table extends Migration
+class m201227_111034_create_rule_pair_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%rule}}', [
+        $this->createTable('{{%rule_pair}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string(50)->notNull(),
             'description' => $this->string(500)->notNull(),
-            'definition' => $this->text()->notNull(),
+            'entrance_code' => $this->string(32)->notNull(),
+            'fail_code' => $this->string(32)->notNull(),
+            'success_code' => $this->string(32)->notNull(),
             'scene_id' => $this->integer()->notNull(),
             'author_id' => $this->integer()->notNull(),
             'created_at' => $this->dateTime(),
@@ -25,29 +27,29 @@ class m201226_025519_create_rule_table extends Migration
 
         // creates index for column `name`
         $this->createIndex(
-            'idx-rule-name',
-            '{{%rule}}',
+            'idx-rule_pair-name',
+            '{{%rule_pair}}',
             'name'
         );
 
         // creates index for column `scene_id`
         $this->createIndex(
-            'idx-rule-scene_id',
-            '{{%rule}}',
+            'idx-rule_pair-scene_id',
+            '{{%rule_pair}}',
             'scene_id'
         );
 
         // creates index for column `author_id`
         $this->createIndex(
-            'idx-rule-author_id',
-            '{{%rule}}',
+            'idx-rule_pair-author_id',
+            '{{%rule_pair}}',
             'author_id'
         );
 
         // add foreign key for table `scene`
         $this->addForeignKey(
-            'fk-rule-scene_id',
-            '{{%rule}}',
+            'fk-rule_pair-scene_id',
+            '{{%rule_pair}}',
             'scene_id',
             'scene',
             'id',
@@ -56,8 +58,8 @@ class m201226_025519_create_rule_table extends Migration
 
         // add foreign key for table `user`
         $this->addForeignKey(
-            'fk-rule-author_id',
-            '{{%rule}}',
+            'fk-rule_pair-author_id',
+            '{{%rule_pair}}',
             'author_id',
             'user',
             'id',
@@ -70,6 +72,21 @@ class m201226_025519_create_rule_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%rule}}');
+        $this->dropTable('{{%rule_pair}}');
     }
+
+    /*
+    // Use up()/down() to run migration code without a transaction.
+    public function up()
+    {
+
+    }
+
+    public function down()
+    {
+        echo "m201227_111034_create_rule_pair_table cannot be reverted.\n";
+
+        return false;
+    }
+    */
 }
