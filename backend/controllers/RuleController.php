@@ -65,10 +65,8 @@ class RuleController extends Controller
     public function actionCreate()
     {
         $model = new Rule();
-        $model->load(Yii::$app->request->post());
-        $model->author_id =  Yii::$app->user->id;
 
-        if (Yii::$app->request->isPost && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
         else

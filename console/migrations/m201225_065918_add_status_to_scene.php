@@ -12,7 +12,7 @@ class m201225_065918_add_status_to_scene extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('scene', 'status', $this->integer() . ' AFTER description');
+        $this->addColumn('scene', 'status', $this->integer()->defaultValue(1) . ' AFTER description');
     }
 
     /**

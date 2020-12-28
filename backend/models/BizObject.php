@@ -60,6 +60,7 @@ class BizObject extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['author_id','default', 'value' =>Yii::$app->user->id],
             [['name', 'scene_id', 'definition', 'author_id'], 'required'],
             [['scene_id', 'author_id'], 'integer'],
             [['definition'], 'string'],
