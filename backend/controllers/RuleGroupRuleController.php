@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\RuleGroup;
-use app\models\RuleGroupSearch;
-use yii\helpers\ArrayHelper;
+use app\models\RuleGroupRule;
+use app\models\RuleGroupRuleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RuleGroupController implements the CRUD actions for RuleGroup model.
+ * RuleGroupRuleController implements the CRUD actions for RuleGroupRule model.
  */
-class RuleGroupController extends Controller
+class RuleGroupRuleController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,12 +30,12 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Lists all RuleGroup models.
+     * Lists all RuleGroupRule models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RuleGroupSearch();
+        $searchModel = new RuleGroupRuleSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Displays a single RuleGroup model.
+     * Displays a single RuleGroupRule model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,21 +58,17 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Creates a new RuleGroup model.
+     * Creates a new RuleGroupRule model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new RuleGroup();
-        $model->loadDefaultValues();
+        $model = new RuleGroupRule();
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        }
-        elseif (!\Yii::$app->request->isPost) {
-            $model->load(Yii::$app->request->get());
-            $model->rule_ids = ArrayHelper::map($model->rules, 'id', 'name');
         }
 
         return $this->render('create', [
@@ -82,7 +77,7 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Updates an existing RuleGroup model.
+     * Updates an existing RuleGroupRule model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -95,11 +90,6 @@ class RuleGroupController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-        elseif (!\Yii::$app->request->isPost) {
-            $model->load(Yii::$app->request->get());
-            $model->rule_ids = ArrayHelper::map($model->rules, 'id', 'name');
-        }
-
 
         return $this->render('update', [
             'model' => $model,
@@ -107,7 +97,7 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Deletes an existing RuleGroup model.
+     * Deletes an existing RuleGroupRule model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -121,15 +111,15 @@ class RuleGroupController extends Controller
     }
 
     /**
-     * Finds the RuleGroup model based on its primary key value.
+     * Finds the RuleGroupRule model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return RuleGroup the loaded model
+     * @return RuleGroupRule the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = RuleGroup::findOne($id)) !== null) {
+        if (($model = RuleGroupRule::findOne($id)) !== null) {
             return $model;
         }
 

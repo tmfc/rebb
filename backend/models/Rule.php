@@ -106,4 +106,16 @@ class Rule extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Scene::class, ['id' => 'scene_id']);
     }
+
+    public function getRuleGroups()
+    {
+        return $this->hasMany(RuleGroup::class, ['id' => 'group_id'])
+            ->viaTable('rule_group_rule', ['rule_id' => 'id']);
+    }
+
+    public function findAllByScene($scene_id)
+    {
+       return $this->find()->where(['scene_id' => $scene_id])->all();
+    }
+
 }

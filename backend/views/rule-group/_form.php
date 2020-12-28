@@ -1,6 +1,7 @@
 <?php
 
 use app\models\enums\EnableStatus;
+use app\models\Rule;
 use app\models\Scene;
 use kartik\select2\Select2;
 use kartik\switchinput\SwitchInput;
@@ -37,6 +38,18 @@ use kartik\form\ActiveForm;
         ],
     ]); ?>
 
+
+    <?= $form->field($model, 'rule_ids')->widget(Select2::className(), [
+        'model' => $model,
+        'attribute' => 'rule_ids',
+        'data' => ArrayHelper::map(Rule::find()->all(), 'id', 'name'),
+        'options' => [
+            'multiple' => true,
+        ],
+        'pluginOptions' => [
+            'tags' => true,
+        ],
+    ]); ?>
 
     <div class="form-group row">
         <div class="col-md-3"></div>
