@@ -28,7 +28,8 @@
         "trntv/yii2-aceeditor": "^2.1",
         "kartik-v/yii2-widget-select2": "dev-master",
         "yii2mod/yii2-enum": "*",
-        "kartik-v/yii2-widget-switchinput": "dev-master"
+        "kartik-v/yii2-widget-switchinput": "dev-master",
+        "cornernote/yii2-linkall": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\models\enums\EnableStatus;
 use common\models\User;
+use cornernote\linkall\LinkAllBehavior;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
@@ -22,9 +23,12 @@ use yii\db\Expression;
  *
  * @property User $author
  * @property Scene $scene
+ * @property Rule[] $rules
  */
 class RuleGroup extends \yii\db\ActiveRecord
 {
+
+    public $rule_ids;
     /**
      * {@inheritdoc}
      */
@@ -42,7 +46,8 @@ class RuleGroup extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            LinkAllBehavior::class,
         ];
     }
 
@@ -61,6 +66,8 @@ class RuleGroup extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['author_id', 'default', 'value' => 1],
+            ['rule_ids','safe'],
             [['name', 'description', 'status', 'scene_id', 'author_id'], 'required'],
             [['status', 'scene_id', 'author_id'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
@@ -118,4 +125,22 @@ class RuleGroup extends \yii\db\ActiveRecord
    {
        return $this->hasOne(Scene::class, ['id' => 'scene_id']);
    }
+
+   public function getRules()
+   {
+       return $this->hasMany(Rule::class, ['id' => 'rule_id'])
+           ->viaTable('rule_group_rule', ['group_id' => 'id']);
+   }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        foreach ($this->rule_ids as $rule_id) {
+                $rule = Rule::findOne($rule_id);
+                if ($rule) {
+                    $this->link('rules', $rule);
+                }
+        }
+
+        parent::afterSave($insert, $changedAttributes);
+    }
 }

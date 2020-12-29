@@ -29,7 +29,7 @@ YiiAsset::register($this);
                 [
                     'attribute'=>'status',
                     'format'=>'raw',
-                    'value'=>$model->status ? '<span class="badge badge-success">Yes</span>' : '<span class="badge badge-danger">No</span>',
+                    'value'=>$model->status ? '<span class="badge badge-success">Enabled</span>' : '<span class="badge badge-danger">Disabled</span>',
 
                 ],
                 'created_at',

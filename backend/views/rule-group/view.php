@@ -17,17 +17,31 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <h1><?= Html::encode($this->title) ?></h1>
 
+        <p>
+            <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        </p>
+
         <?= DetailView::widget([
             'model' => $model,
             'attributes' => [
                 'id',
-            'name',
-            'description',
-            'status',
-            'scene_id',
-            'author_id',
-            'created_at',
-            'updated_at',
+                'name',
+                'description',
+                [
+                    'attribute'=>'status',
+                    'format'=>'raw',
+                    'value'=>$model->status ? '<span class="badge badge-success">Enabled</span>' : '<span class="badge badge-danger">Disabled</span>',
+
+                ],
+                [
+                    'attribute'=>'scene_id',
+                    'value'=>$model->scene->name,
+                ],
+                [
+                    'attribute'=>'author_id',
+                    'value'=>$model->author->username,
+                ],                'created_at',
+                'updated_at',
             ],
         ]) ?>
     </div>

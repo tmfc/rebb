@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eae09d6e3dca3d148051082acaa20d81",
+    "content-hash": "9952ddccfc6f493113233aafb9a1cf10",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -324,6 +324,54 @@
             ],
             "description": "CSS for vector based country flags",
             "time": "2020-06-10T11:53:19+00:00"
+        },
+        {
+            "name": "cornernote/yii2-linkall",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cornernote/yii2-linkall.git",
+                "reference": "19a44c911f9ddc303476964aa442b263056bf8a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cornernote/yii2-linkall/zipball/19a44c911f9ddc303476964aa442b263056bf8a0",
+                "reference": "19a44c911f9ddc303476964aa442b263056bf8a0",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "phpunit/dbunit": "~1.0",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "cornernote\\linkall\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Brett O'Donnell",
+                    "email": "cornernote@gmail.com",
+                    "homepage": "http://mrphp.com.au/"
+                }
+            ],
+            "description": "Behavior to handle saving multiple many to many related records in Yii2.",
+            "keywords": [
+                "link",
+                "linkall",
+                "many to many",
+                "yii2"
+            ],
+            "time": "2015-06-20T08:36:12+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
