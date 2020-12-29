@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\behaviors\EnableStatusBehavior;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
@@ -13,6 +14,7 @@ use common\models\User;
  * @property int $id
  * @property string $name
  * @property string|null $description
+ * @property int $status
  * @property int $scene_id
  * @property string $definition
  * @property int $author_id
@@ -41,7 +43,8 @@ class BizObject extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -62,7 +65,7 @@ class BizObject extends \yii\db\ActiveRecord
         return [
             ['author_id','default', 'value' =>Yii::$app->user->id],
             [['name', 'scene_id', 'definition', 'author_id'], 'required'],
-            [['scene_id', 'author_id'], 'integer'],
+            [['scene_id', 'author_id', 'status'], 'integer'],
             [['definition'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
@@ -81,6 +84,7 @@ class BizObject extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
             'scene_id' => Yii::t('app', 'Scene ID'),
             'definition' => Yii::t('app', 'Definition'),
             'author_id' => Yii::t('app', 'Author ID'),

@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\behaviors\EnableStatusBehavior;
 use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -14,6 +15,7 @@ use yii\db\Expression;
  * @property int $scene_id
  * @property string $name
  * @property string $description
+ * @property int $status
  * @property string $definition
  * @property int $author_id
  * @property string|null $created_at
@@ -41,7 +43,8 @@ class Rule extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -61,7 +64,7 @@ class Rule extends \yii\db\ActiveRecord
     {
         return [
             [['scene_id', 'name', 'description', 'definition', 'author_id'], 'required'],
-            [['scene_id', 'author_id'], 'integer'],
+            [['scene_id', 'author_id', 'status'], 'integer'],
             [['definition'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
@@ -80,6 +83,7 @@ class Rule extends \yii\db\ActiveRecord
             'scene_id' => Yii::t('app', 'Scene ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
             'definition' => Yii::t('app', 'Definition'),
             'author_id' => Yii::t('app', 'Author ID'),
             'created_at' => Yii::t('app', 'Created At'),

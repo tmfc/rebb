@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\models\behaviors\EnableStatusBehavior;
+use app\models\enums\EnableStatus;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -14,7 +15,7 @@ use yii\db\Expression;
  * @property int $id
  * @property string|null $name
  * @property string|null $description
- * @property string|null $status
+ * @property int $status
  * @property string|null $created_at
  * @property string|null $updated_at
  */
@@ -64,8 +65,7 @@ class Scene extends ActiveRecord
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
             [['status'], 'integer'],
-//            ['status', 'default', 'value' => EnableStatus::ENABLED],
-//            ['status', 'in', 'range' => EnableStatus::getConstantsByName()],
+
         ];
     }
 

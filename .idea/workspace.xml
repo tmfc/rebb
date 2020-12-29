@@ -19,10 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add rule-group model&#10;add rule-group CRUD">
-      <change afterPath="$PROJECT_DIR$/backend/models/behaviors/EnableStatusBehavior.php" afterDir="false" />
+    <list default="true" id="188fbf8c-8810-4639-a402-af011ae14bb1" name="Default Changelist" comment="add EnableStatusBehavior to handle status validate for all model that have enable/disable status attribute">
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201229_102422_add_status_to_rule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201229_102503_add_status_to_rule_pair.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/console/migrations/m201229_102735_add_status_to_biz_object.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/RuleGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/RuleGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/BizObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/BizObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Rule.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Rule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/RulePair.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/RulePair.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/models/Scene.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Scene.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +258,7 @@
       <workItem from="1608602418546" duration="9910000" />
       <workItem from="1608982007152" duration="164000" />
       <workItem from="1608984040554" duration="20557000" />
-      <workItem from="1609234691931" duration="2448000" />
+      <workItem from="1609234691931" duration="3009000" />
     </task>
     <task id="LOCAL-00007" summary="add rebb model template for gii&#10;add rebb crud template for gii&#10;add katik-v widgets">
       <created>1608528588632</created>
@@ -326,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609142517485</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add EnableStatusBehavior to handle status validate for all model that have enable/disable status attribute">
+      <created>1609237348044</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609237348044</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +372,8 @@
     <MESSAGE value="add status to scene model&#10;add rule model&#10;add rule CURD" />
     <MESSAGE value="add rule-pair model&#10;add rule-pair CRUD&#10;fix biz-object and rule create bug" />
     <MESSAGE value="add rule-group model&#10;add rule-group CRUD" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rule-group model&#10;add rule-group CRUD" />
+    <MESSAGE value="add EnableStatusBehavior to handle status validate for all model that have enable/disable status attribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="add EnableStatusBehavior to handle status validate for all model that have enable/disable status attribute" />
   </component>
   <component name="WindowStateProjectService">
     <state x="474" y="304" key="#Composer" timestamp="1607861207630">
@@ -380,11 +392,11 @@
       <screen x="0" y="25" width="1440" height="787" />
     </state>
     <state x="401" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1440.787@0.25.1440.787" timestamp="1609069435154" />
-    <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609237267665">
+    <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609237788694">
       <screen x="0" y="25" width="1440" height="787" />
     </state>
     <state x="458" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.794@0.23.1440.794" timestamp="1608010948412" />
-    <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.787@0.25.1440.787" timestamp="1609237267665" />
+    <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.787@0.25.1440.787" timestamp="1609237788694" />
     <state x="483" y="131" key="#xdebugger.evaluate" timestamp="1609237159988">
       <screen x="0" y="25" width="1440" height="787" />
     </state>
