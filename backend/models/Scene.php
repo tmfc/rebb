@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\models\enums\EnableStatus;
+use app\models\behaviors\EnableStatusBehavior;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -38,7 +38,8 @@ class Scene extends ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -63,8 +64,8 @@ class Scene extends ActiveRecord
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
             [['status'], 'integer'],
-            ['status', 'default', 'value' => EnableStatus::ENABLED],
-            ['status', 'in', 'range' => EnableStatus::getConstantsByName()],
+//            ['status', 'default', 'value' => EnableStatus::ENABLED],
+//            ['status', 'in', 'range' => EnableStatus::getConstantsByName()],
         ];
     }
 
@@ -88,15 +89,6 @@ class Scene extends ActiveRecord
         return $this->hasMany(BizObject::class, ['scene_id' => 'id']);
     }
 
-    public function setStatus(EnableStatus $status)
-    {
-        $this->status = $status->getValue();
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
-    }
 
     static public function getEnabledSceneList()
     {
