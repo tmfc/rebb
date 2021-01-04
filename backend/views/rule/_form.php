@@ -22,6 +22,7 @@ use yii\helpers\Url;
             'deviceSize' => ActiveForm::SIZE_SMALL
         ]]); ?>
 
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'scene_id')->widget(Select2::class, [
         'data' => ArrayHelper::map(Scene::getEnabledSceneList(), 'id', 'name'),
@@ -36,13 +37,11 @@ use yii\helpers\Url;
         'type' => DepDrop::TYPE_SELECT2,
         'select2Options' => ['pluginOptions' => ['allowClear' => true]],
         'pluginOptions' => [
-        'depends' => ['rule-scene_id'],
-        'url' => Url::to(['/rule-template/list-by-scene']),
-        'loadingText' => 'Loading',
+            'depends' => ['rule-scene_id'],
+            'url' => Url::to(['/rule-template/list-by-scene']),
+            'loadingText' => 'Loading',
         ]
     ]); ?>
-
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
