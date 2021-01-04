@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\RuleGroup;
+use app\models\Scene;
 
 /**
- * RuleGroupSearch represents the model behind the search form of `app\models\RuleGroup`.
+ * SceneSearch represents the model behind the search form of `app\models\Scene`.
  */
-class RuleGroupSearch extends RuleGroup
+class SceneSearch extends Scene
 {
     public function behaviors()
     {
@@ -22,7 +22,7 @@ class RuleGroupSearch extends RuleGroup
     public function rules()
     {
         return [
-            [['id', 'status', 'scene_id', 'author_id'], 'integer'],
+            [['id', 'status'], 'integer'],
             [['name', 'description', 'created_at', 'updated_at'], 'safe'],
         ];
     }
@@ -45,7 +45,7 @@ class RuleGroupSearch extends RuleGroup
      */
     public function search($params)
     {
-        $query = RuleGroup::find();
+        $query = Scene::find();
 
         // add conditions that should always apply here
 
@@ -65,8 +65,6 @@ class RuleGroupSearch extends RuleGroup
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
-            'scene_id' => $this->scene_id,
-            'author_id' => $this->author_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            'name',
             [
                 'attribute' => 'scene_id',
                 'vAlign' => 'middle',
@@ -53,9 +53,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'filterInputOptions' => ['placeholder' => 'Any author', 'multiple' => true], // allows multiple authors to be chosen
                 'format' => 'raw'
-            ],            'name',
-            'description',
-            'status',
+            ],
+            [
+                'class' => 'kartik\grid\BooleanColumn',
+                'attribute' => 'status',
+                'vAlign' => 'middle'
+            ],
             'created_at',
             //'updated_at',
 

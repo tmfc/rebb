@@ -11,6 +11,12 @@ use app\models\Rule;
  */
 class RuleSearch extends Rule
 {
+    public function behaviors()
+    {
+        return [
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -62,6 +68,7 @@ class RuleSearch extends Rule
             'rule_template_id' => $this->rule_template_id,
             'scene_id' => $this->scene_id,
             'author_id' => $this->author_id,
+            'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

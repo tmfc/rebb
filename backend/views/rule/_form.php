@@ -3,6 +3,7 @@
 use app\models\Scene;
 use kartik\depdrop\DepDrop;
 use kartik\select2\Select2;
+use kartik\switchinput\SwitchInput;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\form\ActiveForm;
@@ -24,6 +25,8 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+
     <?= $form->field($model, 'scene_id')->widget(Select2::class, [
         'data' => ArrayHelper::map(Scene::getEnabledSceneList(), 'id', 'name'),
         'options' => ['placeholder' => 'Select a scene ...'],
@@ -42,8 +45,8 @@ use yii\helpers\Url;
             'loadingText' => 'Loading',
         ]
     ]); ?>
+    <?= $form->field($model, 'status')->widget(SwitchInput::class, []) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
 
     <div class="form-group row">

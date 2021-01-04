@@ -65,7 +65,6 @@ class Scene extends ActiveRecord
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
             [['status'], 'integer'],
-
         ];
     }
 

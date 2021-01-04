@@ -2,6 +2,7 @@
 
 use app\models\Scene;
 use kartik\select2\Select2;
+use kartik\switchinput\SwitchInput;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\form\ActiveForm;
@@ -32,7 +33,7 @@ use kartik\form\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->widget(SwitchInput::class, []) ?>
 
     <?= $form->field($model, 'definition')->widget(
         'trntv\aceeditor\AceEditor',

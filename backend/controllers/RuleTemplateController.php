@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use app\models\enums\EnableStatus;
 use Yii;
 use app\models\RuleTemplate;
 use app\models\RuleTemplateSearch;
@@ -65,7 +66,7 @@ class RuleTemplateController extends Controller
     public function actionCreate()
     {
         $model = new RuleTemplate();
-
+        $model->status = EnableStatus::ENABLED;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

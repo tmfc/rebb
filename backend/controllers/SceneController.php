@@ -2,9 +2,10 @@
 
 namespace backend\controllers;
 
+use app\models\enums\EnableStatus;
 use Yii;
 use app\models\Scene;
-use yii\data\ActiveDataProvider;
+use app\models\SceneSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,17 +36,14 @@ class SceneController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Scene::find(),
-        ]);
+        $searchModel = new SceneSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
-
     }
-
-
 
     /**
      * Displays a single Scene model.
@@ -68,7 +66,7 @@ class SceneController extends Controller
     public function actionCreate()
     {
         $model = new Scene();
-        $model->loadDefaultValues();
+        $model->status = EnableStatus::ENABLED;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

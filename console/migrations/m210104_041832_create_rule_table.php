@@ -19,6 +19,7 @@ class m210104_041832_create_rule_table extends Migration
             'name' => $this->string(50)->notNull(),
             'description' => $this->string(500),
             'author_id' => $this->integer()->notNull(),
+            'status' => $this->integer()->notNull(),
             'created_at' => $this->dateTime(),
             'updated_at' => $this->dateTime()
         ]);
