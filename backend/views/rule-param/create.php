@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Rule */
+/* @var $model app\models\RuleParam */
 
-$this->title = Yii::t('app', 'Create Rule');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Rules'), 'url' => ['index']];
+$this->title = 'Create Rule Param';
+$this->params['breadcrumbs'][] = ['label' => 'Rule Params', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row rule-create">
+<div class="row rule-param-create">
     <div class="col-xs-10 col-sm-8 col-md-6 col-lg-6">
 
         <h1><?= Html::encode($this->title) ?></h1>

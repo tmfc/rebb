@@ -4,12 +4,12 @@ namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Rule;
+use app\models\RuleParam;
 
 /**
- * RuleSearch represents the model behind the search form of `app\models\Rule`.
+ * RuleParamSearch represents the model behind the search form of `app\models\RuleParam`.
  */
-class RuleSearch extends Rule
+class RuleParamSearch extends RuleParam
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class RuleSearch extends Rule
     public function rules()
     {
         return [
-            [['id', 'rule_template_id', 'scene_id', 'author_id'], 'integer'],
-            [['name', 'description', 'created_at', 'updated_at'], 'safe'],
+            [['id', 'rule_id', 'type'], 'integer'],
+            [['name', 'description', 'default_value', 'constraints', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class RuleSearch extends Rule
      */
     public function search($params)
     {
-        $query = Rule::find();
+        $query = RuleParam::find();
 
         // add conditions that should always apply here
 
@@ -59,15 +59,16 @@ class RuleSearch extends Rule
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'rule_template_id' => $this->rule_template_id,
-            'scene_id' => $this->scene_id,
-            'author_id' => $this->author_id,
+            'rule_id' => $this->rule_id,
+            'type' => $this->type,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'default_value', $this->default_value])
+            ->andFilterWhere(['like', 'constraints', $this->constraints]);
 
         return $dataProvider;
     }

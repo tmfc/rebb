@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Rule;
-use app\models\RuleSearch;
+use app\models\RuleParam;
+use app\models\RuleParamSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RuleController implements the CRUD actions for Rule model.
+ * RuleParamController implements the CRUD actions for RuleParam model.
  */
-class RuleController extends Controller
+class RuleParamController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class RuleController extends Controller
     }
 
     /**
-     * Lists all Rule models.
+     * Lists all RuleParam models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RuleSearch();
+        $searchModel = new RuleParamSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Displays a single Rule model.
+     * Displays a single RuleParam model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class RuleController extends Controller
     }
 
     /**
-     * Creates a new Rule model.
+     * Creates a new RuleParam model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Rule();
+        $model = new RuleParam();
 
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -77,7 +77,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Updates an existing Rule model.
+     * Updates an existing RuleParam model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +97,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Deletes an existing Rule model.
+     * Deletes an existing RuleParam model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -111,18 +111,18 @@ class RuleController extends Controller
     }
 
     /**
-     * Finds the Rule model based on its primary key value.
+     * Finds the RuleParam model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Rule the loaded model
+     * @return RuleParam the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Rule::findOne($id)) !== null) {
+        if (($model = RuleParam::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

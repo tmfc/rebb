@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use kartik\grid\GridView;;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\RuleSearch */
+/* @var $searchModel app\models\RuleParamSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Rules');
+$this->title = 'Rule Params';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="admin_index rule-index">
+<div class="admin_index rule-param-index">
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -21,11 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'rule_template_id',
-            'scene_id',
+            'rule_id',
             'name',
             'description',
-            //'author_id',
+            'type',
+            //'default_value:ntext',
+            //'constraints:ntext',
             //'created_at',
             //'updated_at',
 
@@ -40,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'content' =>
                     Html::a('<i class="fa fa-plus"></i>',['create'], [
                             'class' => 'btn btn-success',
-                            'title' => Yii::t('app', 'Create Rule'),
+                            'title' => Yii::t('app', 'Create RuleParam'),
                     ]) . ' '.
                     Html::a('<i class="fa fa-repeat"></i>', ['index'], [
                             'class' => 'btn btn-outline-secondary',
@@ -52,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'panel' => [
               'type' => GridView::TYPE_DEFAULT,
-              'heading' => '<i class="fas fa-cubes"></i>  Rule',
+              'heading' => '<i class="fas fa-cubes"></i>  RuleParam',
         ],
     ]); ?>
 

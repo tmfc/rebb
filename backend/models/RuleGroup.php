@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\models\enums\EnableStatus;
+use app\models\behaviors\EnableStatusBehavior;
 use common\models\User;
 use cornernote\linkall\LinkAllBehavior;
 use Yii;
@@ -48,6 +48,7 @@ class RuleGroup extends \yii\db\ActiveRecord
                 'value' => new Expression('NOW()'),
             ],
             LinkAllBehavior::class,
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -73,8 +74,6 @@ class RuleGroup extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
-            ['status', 'default', 'value' => EnableStatus::ENABLED],
-            ['status', 'in', 'range' => EnableStatus::getConstantsByName()],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author_id' => 'id']],
             [['scene_id'], 'exist', 'skipOnError' => true, 'targetClass' => Scene::class, 'targetAttribute' => ['scene_id' => 'id']],
         ];
@@ -97,15 +96,6 @@ class RuleGroup extends \yii\db\ActiveRecord
         ];
     }
 
-    public function setStatus(EnableStatus $status)
-    {
-        $this->status = $status->getValue();
-    }
-
-    public function getStatus()
-    {
-        return $this->status;
-    }
 
     /**
      * Gets query for [[Author]].

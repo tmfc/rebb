@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\behaviors\EnableStatusBehavior;
 use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -13,6 +14,7 @@ use yii\db\Expression;
  * @property int $id
  * @property string $name
  * @property string $description
+ * @property int $status
  * @property string $entrance_code
  * @property string $fail_code
  * @property string $success_code
@@ -43,7 +45,8 @@ class RulePair extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -64,7 +67,7 @@ class RulePair extends \yii\db\ActiveRecord
         return [
             ['author_id','default', 'value' =>Yii::$app->user->id],
             [['name', 'description', 'entrance_code', 'fail_code', 'success_code', 'scene_id', 'author_id'], 'required'],
-            [['scene_id', 'author_id'], 'integer'],
+            [['scene_id', 'author_id', 'status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
@@ -83,6 +86,7 @@ class RulePair extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
             'entrance_code' => Yii::t('app', 'Entrance Code'),
             'fail_code' => Yii::t('app', 'Fail Code'),
             'success_code' => Yii::t('app', 'Success Code'),
