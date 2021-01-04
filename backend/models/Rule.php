@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\models\behaviors\EnableStatusBehavior;
+use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
@@ -15,6 +17,7 @@ use yii\db\Expression;
  * @property string $name
  * @property string|null $description
  * @property int $author_id
+ * @property int $status
  * @property string|null $created_at
  * @property string|null $updated_at
  *
@@ -42,7 +45,9 @@ class Rule extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
+
         ];
     }
 
@@ -62,8 +67,8 @@ class Rule extends \yii\db\ActiveRecord
     {
         return [
             ['author_id','default', 'value' =>Yii::$app->user->id],
-            [['rule_template_id', 'scene_id', 'name', 'author_id'], 'required'],
-            [['rule_template_id', 'scene_id', 'author_id'], 'integer'],
+            [['rule_template_id', 'scene_id', 'name', 'author_id', 'status'], 'required'],
+            [['rule_template_id', 'scene_id', 'author_id', 'status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
@@ -85,6 +90,7 @@ class Rule extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'author_id' => Yii::t('app', 'Author ID'),
+            'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];

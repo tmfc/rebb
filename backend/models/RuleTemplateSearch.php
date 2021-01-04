@@ -11,6 +11,12 @@ use app\models\RuleTemplate;
  */
 class RuleTemplateSearch extends RuleTemplate
 {
+    public function behaviors()
+    {
+        return [
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
