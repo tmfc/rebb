@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\RuleSearch */
+/* @var $model app\models\RuleTemplateSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="rule-search">
+<div class="rule-template-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,13 +17,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'rule_template_id') ?>
-
     <?= $form->field($model, 'scene_id') ?>
 
     <?= $form->field($model, 'name') ?>
 
     <?= $form->field($model, 'description') ?>
+
+    <?= $form->field($model, 'status') ?>
+
+    <?php // echo $form->field($model, 'definition') ?>
 
     <?php // echo $form->field($model, 'author_id') ?>
 

@@ -2,35 +2,37 @@
 
 namespace app\models;
 
+use app\models\behaviors\EnableStatusBehavior;
+use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
 /**
- * This is the model class for table "rule".
+ * This is the model class for table "rule_template".
  *
  * @property int $id
- * @property int $rule_template_id
  * @property int $scene_id
  * @property string $name
- * @property string|null $description
+ * @property string $description
+ * @property int|null $status
+ * @property string $definition
  * @property int $author_id
  * @property string|null $created_at
  * @property string|null $updated_at
  *
+ * @property Rule[] $rules
  * @property User $author
- * @property RuleTemplate $ruleTemplate
  * @property Scene $scene
- * @property RuleParam[] $ruleParams
  */
-class Rule extends \yii\db\ActiveRecord
+class RuleTemplate extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'rule';
+        return 'rule_template';
     }
 
     /**
@@ -42,7 +44,8 @@ class Rule extends \yii\db\ActiveRecord
             [
                 'class' => TimestampBehavior::class,
                 'value' => new Expression('NOW()'),
-            ]
+            ],
+            EnableStatusBehavior::class,
         ];
     }
 
@@ -62,13 +65,13 @@ class Rule extends \yii\db\ActiveRecord
     {
         return [
             ['author_id','default', 'value' =>Yii::$app->user->id],
-            [['rule_template_id', 'scene_id', 'name', 'author_id'], 'required'],
-            [['rule_template_id', 'scene_id', 'author_id'], 'integer'],
+            [['scene_id', 'name', 'description', 'definition', 'author_id'], 'required'],
+            [['scene_id', 'status', 'author_id'], 'integer'],
+            [['definition'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 50],
             [['description'], 'string', 'max' => 500],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author_id' => 'id']],
-            [['rule_template_id'], 'exist', 'skipOnError' => true, 'targetClass' => RuleTemplate::class, 'targetAttribute' => ['rule_template_id' => 'id']],
             [['scene_id'], 'exist', 'skipOnError' => true, 'targetClass' => Scene::class, 'targetAttribute' => ['scene_id' => 'id']],
         ];
     }
@@ -80,15 +83,27 @@ class Rule extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'rule_template_id' => Yii::t('app', 'Rule Template ID'),
             'scene_id' => Yii::t('app', 'Scene ID'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
+            'definition' => Yii::t('app', 'Definition'),
             'author_id' => Yii::t('app', 'Author ID'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
+
+    /**
+     * Gets query for [[Rules]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRules()
+    {
+        return $this->hasMany(Rule::class, ['rule_template_id' => 'id']);
+    }
+
 
     /**
      * Gets query for [[Author]].
@@ -98,16 +113,6 @@ class Rule extends \yii\db\ActiveRecord
     public function getAuthor()
     {
         return $this->hasOne(User::class, ['id' => 'author_id']);
-    }
-
-    /**
-     * Gets query for [[RuleTemplate]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getRuleTemplate()
-    {
-        return $this->hasOne(RuleTemplate::class, ['id' => 'rule_template_id']);
     }
 
     /**
@@ -121,12 +126,18 @@ class Rule extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[RuleParams]].
+     * Gets query for [[RuleGroup]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getRuleParams()
+    public function getRuleGroups()
     {
-        return $this->hasMany(RuleParam::class, ['rule_id' => 'id']);
+        return $this->hasMany(RuleGroup::class, ['id' => 'group_id'])
+            ->viaTable('rule_group_rule', ['rule_id' => 'id']);
+    }
+
+    public static function findAllByScene($scene_id)
+    {
+        return self::find()->where(['scene_id' => $scene_id])->all();
     }
 }

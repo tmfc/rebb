@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use app\models\Rule;
-use app\models\RuleSearch;
+use app\models\RuleTemplate;
+use app\models\RuleTemplateSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * RuleController implements the CRUD actions for Rule model.
+ * RuleTemplateController implements the CRUD actions for RuleTemplate model.
  */
-class RuleController extends Controller
+class RuleTemplateController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class RuleController extends Controller
     }
 
     /**
-     * Lists all Rule models.
+     * Lists all RuleTemplate models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new RuleSearch();
+        $searchModel = new RuleTemplateSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Displays a single Rule model.
+     * Displays a single RuleTemplate model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class RuleController extends Controller
     }
 
     /**
-     * Creates a new Rule model.
+     * Creates a new RuleTemplate model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Rule();
+        $model = new RuleTemplate();
 
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -77,7 +77,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Updates an existing Rule model.
+     * Updates an existing RuleTemplate model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +97,7 @@ class RuleController extends Controller
     }
 
     /**
-     * Deletes an existing Rule model.
+     * Deletes an existing RuleTemplate model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,16 +110,37 @@ class RuleController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionListByScene() {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $out = [];
+        if (isset($_POST['depdrop_parents'])) {
+            $scene_id = end($_POST['depdrop_parents']);
+            $list = RuleTemplate::findAllByScene($scene_id);
+            $selected  = null;
+            if ($scene_id != null && count($list) > 0) {
+                $selected = '';
+                foreach ($list as $i => $account) {
+                    $out[] = ['id' => $account['id'], 'name' => $account['name']];
+                    if ($i == 0) {
+                        $selected = $account['id'];
+                    }
+                }
+                // Shows how you can preselect a value
+                return ['output' => $out, 'selected' => $selected];
+            }
+        }
+        return ['output' => '', 'selected' => ''];
+    }
     /**
-     * Finds the Rule model based on its primary key value.
+     * Finds the RuleTemplate model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Rule the loaded model
+     * @return RuleTemplate the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Rule::findOne($id)) !== null) {
+        if (($model = RuleTemplate::findOne($id)) !== null) {
             return $model;
         }
 

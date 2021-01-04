@@ -1,8 +1,5 @@
 <?php
 
-use app\models\Scene;
-use common\models\User;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\grid\GridView;;
 
@@ -24,39 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [
-                'attribute' => 'scene_id',
-                'vAlign' => 'middle',
-                'width' => '180px',
-                'value' => function ($model, $key, $index, $widget) {
-                    return $model->scene->name;
-                },
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => ArrayHelper::map(Scene::getEnabledSceneList(), 'id', 'name'),
-                'filterWidgetOptions' => [
-                    'pluginOptions' => ['allowClear' => true],
-                ],
-                'filterInputOptions' => ['placeholder' => 'Any scene', 'multiple' => true], // allows multiple authors to be chosen
-                'format' => 'raw'
-            ],
-            [
-                'attribute' => 'author_id',
-                'vAlign' => 'middle',
-                'width' => '180px',
-                'value' => function ($model, $key, $index, $widget) {
-                    return $model->author->username;
-                },
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => ArrayHelper::map(User::find()->orderBy('username')->asArray()->all(), 'id', 'username'),
-                'filterWidgetOptions' => [
-                    'pluginOptions' => ['allowClear' => true],
-                ],
-                'filterInputOptions' => ['placeholder' => 'Any author', 'multiple' => true], // allows multiple authors to be chosen
-                'format' => 'raw'
-            ],
+            'rule_template_id',
+            'scene_id',
             'name',
             'description',
-            'created_at',
+            //'author_id',
+            //'created_at',
             //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {update}'],
